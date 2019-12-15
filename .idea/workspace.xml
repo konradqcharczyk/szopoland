@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aac0c1a9-3d89-4206-8197-cacf2c15cd4e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/com/szopolska/AdvertismentSpace/AdSpaceAggregator" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/szopolska/AdvertismentSpace/AdvertismentSpaceAgent" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/szopolska/ClientAgents/SendLocalizationBehavior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/szopolska/ClientAgents/SendLocalizationBehavior.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/szopolska/LocalizatorAgents/GetLocalisationBehavior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/szopolska/LocalizatorAgents/GetLocalisationBehavior.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/szopolska/ShopAgent/OfferProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/szopolska/ShopAgent/OfferProvider.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,10 +30,15 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../WSD_2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/com/szopolska/AdvertismentSpace" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/com/szopolska/AdvertismentSpace" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="Szopoland" type="Application" factoryName="Application">
@@ -76,6 +80,10 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="451" y="210" key="#com.intellij.execution.impl.EditConfigurationsDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1576426259351" />
+    <state x="635" y="357" width="744" height="390" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1576440556727">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="635" y="357" width="744" height="390" key="#com.intellij.fileTypes.FileTypeChooser/67.27.1853.1053@67.27.1853.1053" timestamp="1576440556727" />
     <state x="725" y="338" width="525" height="428" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1576426145599">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>

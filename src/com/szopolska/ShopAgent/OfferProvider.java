@@ -12,7 +12,7 @@ import java.util.Random;
 import java.util.stream.IntStream;
 
 public class OfferProvider extends TickerBehaviour {
-    AID shoppingMall;
+
 
     public OfferProvider(Agent a, long period) {
         super(a, period);
@@ -21,7 +21,7 @@ public class OfferProvider extends TickerBehaviour {
     @Override
     protected void onTick() {
         ACLMessage msg = new ACLMessage(ACLMessage.INFORM);
-        msg.addReceiver(this.shoppingMall);
+        msg.addReceiver(new AID("mall", AID.ISLOCALNAME));
         msg.setLanguage("English");
         msg.setOntology("send-data-ontology");
         msg.setContent(provideOffer().varchar);

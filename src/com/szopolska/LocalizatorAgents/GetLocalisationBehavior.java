@@ -19,11 +19,9 @@ public class GetLocalisationBehavior extends CyclicBehaviour {
         if(msg != null ) {
             if(msg.getContent().equals("LOST_CONNECTION")) {
                 LocalizatorAggregator.getInstance().removeLocalizatorData(myAgent.getAID(), msg.getSender());
-//                System.out.println("PO WYWALENIU" + LocalizatorAggregator.getInstance().getLocalizatorData(myAgent.getAID()));
             }
             else {
                 LocalizatorAggregator.getInstance().addLocalizatorData(myAgent.getAID(), msg.getSender(), msg.getContent());
-//                System.out.println("PO DODANIU DO " + myAgent.getLocalName() + " " + LocalizatorAggregator.getInstance().getLocalizatorData(myAgent.getAID()));
             }
         }
         else {

@@ -25,15 +25,13 @@ public class SendLocalizationBehavior extends TickerBehaviour {
             msg_to_remove.setLanguage("English");
             msg_to_remove.setOntology("send-data-ontology");
             msg_to_remove.setContent("LOST_CONNECTION");
-//            System.out.println(myAgent.getLocalName() + " Usuwam się z " + this.localizator.getLocalName());
             myAgent.send(msg_to_remove);
         }
         this.localizator = ClientLocalizatorAggregator.getInstance().getClientLocalizator(myAgent.getAID());
         msg.addReceiver(this.localizator);
         msg.setLanguage("English");
         msg.setOntology("send-data-ontology");
-        msg.setContent(GetLocalization() + "");
-//        System.out.println(myAgent.getLocalName() + " Dodaje się do " + this.localizator.getLocalName());
+        msg.setContent(GetLocalization() + "#" + CreateShoppingList());
         myAgent.send(msg);
     }
 
@@ -42,5 +40,20 @@ public class SendLocalizationBehavior extends TickerBehaviour {
         loc.add(Math.random() * 100);
         loc.add(Math.random() * 100);
         return loc;
+    }
+
+
+    private Vector<String> CreateShoppingList() {
+        Vector<String> allItems = new Vector<String>();
+        Vector<String> selectedItems = new Vector<String>();
+        allItems.add("BUTY");
+        allItems.add("BLUZA");
+        allItems.add("T-SHIRT");
+        allItems.add("SPODNIE");
+        allItems.add("SKARPETY");
+        Collections.shuffle(allItems);
+        selectedItems.add(allItems.get(0));
+        selectedItems.add(allItems.get(1));
+        return selectedItems;
     }
 }

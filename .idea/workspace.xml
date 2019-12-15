@@ -2,30 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aac0c1a9-3d89-4206-8197-cacf2c15cd4e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/jade1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/szopolska/ShopAgent/ShopDataAggregator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/szopoland.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/szopoland.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/WSD/META-INF/WSD.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/WSD/com/szopolska/ClientAgents/ChangeLocalizatorBehaviour.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/WSD/com/szopolska/ClientAgents/ClientAgent.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/WSD/com/szopolska/ClientAgents/ClientLocalizatorAggregator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/WSD/com/szopolska/ClientAgents/SendLocalizationBehavior.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/WSD/com/szopolska/ClientAgents/SendShoppingListBehavior.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/WSD/com/szopolska/LocalizatorAgents/ClientDataProviderBehaviuor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/WSD/com/szopolska/LocalizatorAgents/GetLocalisationBehavior.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/WSD/com/szopolska/LocalizatorAgents/LocalizatorAgent.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/WSD/com/szopolska/LocalizatorAgents/LocalizatorAggregator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/WSD/com/szopolska/ShoppingMall/DataAggregator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/WSD/com/szopolska/ShoppingMall/DataAggregatorBehaviour.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/WSD/com/szopolska/ShoppingMall/ShoppingMallAgent.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/szopolska/ShopAgent/MessageReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/szopolska/ShopAgent/MessageReceiver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/szopoland/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/szopoland/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/szopoland/.idea/szopoland.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/szopoland/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/szopoland/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/szopolska/ClientAgents/SendLocalizationBehavior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/szopolska/ClientAgents/SendLocalizationBehavior.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/szopolska/LocalizatorAgents/GetLocalisationBehavior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/szopolska/LocalizatorAgents/GetLocalisationBehavior.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/szopolska/ShopAgent/OfferProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/szopolska/ShopAgent/OfferProvider.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

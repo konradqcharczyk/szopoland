@@ -14,11 +14,7 @@ public class MessageReceiver extends CyclicBehaviour {
     public void action() {
         ACLMessage msg = myAgent.receive();
         if (msg != null) {
-            if (msg.getContent().equals("LOST_CONNECTION")) {
-                LocalizatorAggregator.getInstance().removeLocalizatorData(myAgent.getAID(), msg.getSender());
-            } else {
-                LocalizatorAggregator.getInstance().addLocalizatorData(myAgent.getAID(), msg.getSender(), msg.getContent());
-            }
+                ShopDataAggregator.getInstance().addLocalizatorData(myAgent.getAID(), msg.getSender(), msg.getContent());
         } else {
             block();
         }

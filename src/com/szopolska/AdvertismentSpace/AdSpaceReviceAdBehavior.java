@@ -8,9 +8,9 @@ import jade.lang.acl.UnreadableException;
 import java.util.HashMap;
 import java.util.Vector;
 
-public class GetLocalisationBehavior extends CyclicBehaviour {
+public class AdSpaceReviceAdBehavior extends CyclicBehaviour {
 
-    public GetLocalisationBehavior() {
+    public AdSpaceReviceAdBehavior() {
         super();
     }
     @Override

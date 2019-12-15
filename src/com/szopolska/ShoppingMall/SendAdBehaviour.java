@@ -9,9 +9,9 @@ import jade.lang.acl.UnreadableException;
 import java.io.IOException;
 import java.util.HashMap;
 
-public class AdSpaceSendReqBehaviour extends TickerBehaviour{
+public class SendAdBehaviour extends TickerBehaviour{
 
-    public AdSpaceSendReqBehaviour(Agent a, long period) {
+    public SendAdBehaviour(Agent a, long period) {
         super(a, period);
     }
 
@@ -28,4 +28,6 @@ public class AdSpaceSendReqBehaviour extends TickerBehaviour{
         }
         myAgent.send(msg);
     }
+
+
 }

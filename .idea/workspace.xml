@@ -2,9 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aac0c1a9-3d89-4206-8197-cacf2c15cd4e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/szopolska/AdvertismentSpace/AdSpaceAggregator" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/szopolska/AdvertismentSpace/AdvertismentSpaceAgent" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/szopolska/ShoppingMall/SendAdBehaviour.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/szopolska/AdvertismentSpace/AdSpaceReviceAdBehavior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/szopolska/AdvertismentSpace/AdSpaceReviceAdBehavior.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/szopolska/AdvertismentSpace/AdSpaceSendReqBehaviour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/szopolska/AdvertismentSpace/AdSpaceSendReqBehaviour.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/szopolska/AdvertismentSpace/AdvertismentSpaceAgent" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/szopolska/AdvertismentSpace/AdvertismentSpaceAgent" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/szopolska/ShopAgent/OfferProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/szopolska/ShopAgent/OfferProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/szopolska/ShoppingMall/DataAggregator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/szopolska/ShoppingMall/DataAggregator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/szopolska/ShoppingMall/DataAggregatorBehaviour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/szopolska/ShoppingMall/DataAggregatorBehaviour.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -16,12 +16,29 @@ public class DataAggregatorBehaviour extends CyclicBehaviour{
     public void action() {
         ACLMessage msg = myAgent.receive();
         if(msg != null) {
-            try {
-                System.out.println("Client localization from " + msg.getSender().getLocalName() + " " + msg.getContentObject());
-                DataAggregator.getInstance().addClientLoc(msg.getSender(), (HashMap<AID, String>) msg.getContentObject());
-            } catch (UnreadableException e) {
-                e.printStackTrace();
-            }
+            switch(msg.getOntology())
+                case 'send-data-ontology':
+                    try {
+                        System.out.println("Client localization from " + msg.getSender().getLocalName() + " " + msg.getContentObject());
+                        DataAggregator.getInstance().addClientLoc(msg.getSender(), (HashMap<AID, String>) msg.getContentObject());
+                    } catch (UnreadableException e) {
+                        e.printStackTrace();
+                    }
+                break;
+            case "send-offer-ontology":
+                    System.out.println("Shop offer req from " + msg.getSender().getLocalName());
+                    DataAggregator.getInstance().addAd(msg.getContent());
+                break:
+            case 'req-ad-ontology':
+                    System.out.println("AdSpace req from " + msg.getSender().getLocalName());
+
+                    ACLMessage msgResp = new ACLMessage(ACLMessage.INFORM);
+                    msgResp.addReceiver(msg.getSender(), AID.ISLOCALNAME));
+                    msgResp.setLanguage("English");
+                    msgResp.setOntology("req-ad-ontology");
+                    msgResp.setContent(DataAggregator.getInstance().getRandomAd());
+                    myAgent.send(msgResp);
+                break:
         }
         else {
             block();

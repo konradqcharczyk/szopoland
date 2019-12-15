@@ -12,12 +12,11 @@ import java.util.*;
 
 public class AdvertaismentSpaceAgent extends Agent {
 
-
     protected void setup() {
         System.out.println("Hello! AdvertaismentSpace-agent " + getAID().getName() + " is ready.");
         AdSpaceAggregator.getInstance().setAdSpaceLocalizator(this.getAID(), getRandomLocalizator());
-
-
+        addBehaviour(new AdSpaceReviceAdBehavior());
+        addBehaviour(new AdSpaceSendReqBehaviour(this, 5 * 60000));
     }
 
     protected void takeDown() {

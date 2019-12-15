@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="jade1">
+    <CLASSES>
+      <root url="file://$USER_HOME$/WSD/JADE-bin-4.5.0/jade" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://$USER_HOME$/WSD/JADE-bin-4.5.0/jade" recursive="false" />
+  </library>
+</component>

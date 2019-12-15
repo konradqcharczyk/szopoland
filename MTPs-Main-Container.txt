@@ -1,1 +1,1 @@
-http://localhost:7778/acc
+http://ThinkPad-T480:7778/acc

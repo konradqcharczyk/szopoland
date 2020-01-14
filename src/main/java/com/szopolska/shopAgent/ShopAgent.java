@@ -7,7 +7,7 @@ public class ShopAgent extends Agent {
     protected void setup() {
         System.out.println("Hello! Shop-agent " + getAID().getName() + " is ready.");
         addBehaviour(new MessageReceiver());
-        addBehaviour(new OfferProvider(this, 1000));
+        addBehaviour(new OfferProvider(this, 5000));
     }
 
     protected void takeDown() {

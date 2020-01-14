@@ -28,7 +28,7 @@ public class DataAggregatorBehaviour extends CyclicBehaviour {
                     }
                     break;
                 case "send-offer-ontology":
-                    System.out.println("Shop offer req from " + msg.getSender().getLocalName());
+                    System.out.println("Shop offer req from " + msg.getSender().getLocalName() + " " + msg.getContent());
                     DataAggregator.getInstance().addAd(msg.getContent());
                     break;
                 case "req-ad-ontology":

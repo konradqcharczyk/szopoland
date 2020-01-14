@@ -14,11 +14,7 @@ public class AdSpaceReviceAdBehavior extends CyclicBehaviour {
     public void action() {
         ACLMessage msg = myAgent.receive();
         if (msg != null) {
-            try {
-                showAd(msg.getContentObject().toString());
-            } catch (UnreadableException e) {
-                e.printStackTrace();
-            }
+            showAd(msg.getContent());
         } else {
             block();
         }

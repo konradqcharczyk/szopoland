@@ -16,11 +16,11 @@ public class AdvertismentSpaceAgent extends Agent {
         System.out.println("Hello! AdvertaismentSpace-agent " + getAID().getName() + " is ready.");
         AdSpaceAggregator.getInstance().setAdSpaceLocalizator(this.getAID(), getRandomLocalizator());
         addBehaviour(new AdSpaceReviceAdBehavior());
-        addBehaviour(new AdSpaceSendReqBehaviour(this, 5 * 60000));
+        addBehaviour(new AdSpaceSendReqBehaviour(this, 10000));
     }
 
     protected void takeDown() {
-        System.out.println("Client-agent " + getAID().getName() + " is dead");
+        System.out.println("AdvertaismentSpace-agent " + getAID().getName() + " is dead");
     }
 
     private List<AID> discoverLocalizatorAgents() {

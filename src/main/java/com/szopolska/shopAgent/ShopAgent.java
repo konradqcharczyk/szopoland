@@ -1,4 +1,4 @@
-package com.szopolska.ShopAgent;
+package com.szopolska.shopAgent;
 
 import jade.core.Agent;
 

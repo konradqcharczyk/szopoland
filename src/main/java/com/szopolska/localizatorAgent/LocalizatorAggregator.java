@@ -1,6 +1,5 @@
-package com.szopolska.LocalizatorAgents;
+package com.szopolska.localizatorAgent;
 
-import com.szopolska.ClientAgents.ClientLocalizatorAggregator;
 import jade.core.AID;
 
 import java.util.HashMap;
@@ -9,7 +8,7 @@ public class LocalizatorAggregator {
     private static LocalizatorAggregator instance = null;
 
     public static LocalizatorAggregator getInstance() {
-        if(instance == null) {
+        if (instance == null) {
             instance = new LocalizatorAggregator();
         }
         return instance;
@@ -22,10 +21,9 @@ public class LocalizatorAggregator {
     }
 
     public static void addLocalizatorData(AID id, AID clientId, String clientLoc) {
-        if(localizatorData.get(id) != null){
+        if (localizatorData.get(id) != null) {
             localizatorData.get(id).put(clientId, clientLoc);
-        }
-        else {
+        } else {
             HashMap<AID, String> clientsLocMap = new HashMap<>();
             clientsLocMap.put(clientId, clientLoc);
             localizatorData.put(id, clientsLocMap);

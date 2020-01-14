@@ -1,6 +1,5 @@
-package com.szopolska.ClientAgents;
+package com.szopolska.advertismentSpace;
 
-import com.szopolska.ShoppingMall.DataAggregator;
 import jade.core.AID;
 
 import java.util.HashMap;
@@ -9,7 +8,7 @@ public class AdSpaceAggregator {
     private static AdSpaceAggregator instance = null;
 
     public static AdSpaceAggregator getInstance() {
-        if(instance == null) {
+        if (instance == null) {
             instance = new AdSpaceAggregator();
         }
         return instance;

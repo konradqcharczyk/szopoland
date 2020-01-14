@@ -1,4 +1,4 @@
-package com.szopolska.ClientAgents;
+package com.szopolska.clientAgent;
 
 import jade.core.AID;
 import jade.core.Agent;
@@ -21,11 +21,11 @@ public class ChangeLocalizatorBehaviour extends TickerBehaviour {
 
     @Override
     protected void onTick() {
-        if(Math.random() > 0.0) {
+        if (Math.random() > 0.0) {
             List<AID> list = discoverLocalizatorAgents();
             Random r = new Random();
             int uid = r.nextInt(list.size());
-            this.currentLocalizator  = list.get(uid);
+            this.currentLocalizator = list.get(uid);
             ClientLocalizatorAggregator.getInstance().setClientLocalizator(myAgent.getAID(), currentLocalizator);
         }
     }
@@ -36,16 +36,15 @@ public class ChangeLocalizatorBehaviour extends TickerBehaviour {
 
         try {
             SearchConstraints c = new SearchConstraints();
-            c.setMaxResults ((long) -1);
-            agents = AMSService.search( myAgent, new AMSAgentDescription (), c );
-        }
-        catch (Exception e) {
+            c.setMaxResults((long) -1);
+            agents = AMSService.search(myAgent, new AMSAgentDescription(), c);
+        } catch (Exception e) {
 
         }
-        for (int i=0; i < agents.length; i++){
+        for (int i = 0; i < agents.length; i++) {
             AID agentID = agents[i].getName();
             String localName = agentID.getLocalName();
-            if(localName.startsWith("localizator")) {
+            if (localName.startsWith("localizator")) {
                 agentsId.add(agentID);
             }
         }

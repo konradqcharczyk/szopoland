@@ -1,27 +1,30 @@
-package com.szopolska.AdvertaismentSpace;
+package com.szopolska.clientAgent;
 
 import jade.core.AID;
 import jade.core.Agent;
-import jade.core.behaviours.TickerBehaviour;
 import jade.domain.AMSService;
 import jade.domain.FIPAAgentManagement.AMSAgentDescription;
 import jade.domain.FIPAAgentManagement.SearchConstraints;
-import jade.lang.acl.ACLMessage;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
-public class AdvertaismentSpaceAgent extends Agent {
+public class ClientAgent extends Agent {
+
 
     protected void setup() {
-        System.out.println("Hello! AdvertaismentSpace-agent " + getAID().getName() + " is ready.");
-        AdSpaceAggregator.getInstance().setAdSpaceLocalizator(this.getAID(), getRandomLocalizator());
-        addBehaviour(new AdSpaceReviceAdBehavior());
-        addBehaviour(new AdSpaceSendReqBehaviour(this, 5 * 60000));
+        System.out.println("Hello! Client-agent " + getAID().getName() + " is ready.");
+        ClientLocalizatorAggregator.getInstance().setClientLocalizator(this.getAID(), getRandomLocalizator());
+        addBehaviour(new ChangeLocalizatorBehaviour(this, 10000));
+        addBehaviour(new SendLocalizationBehavior(this, 2000));
+
     }
 
     protected void takeDown() {
         System.out.println("Client-agent " + getAID().getName() + " is dead");
     }
+
 
     private List<AID> discoverLocalizatorAgents() {
         ArrayList<AID> agentsId = new ArrayList<AID>();
@@ -29,16 +32,15 @@ public class AdvertaismentSpaceAgent extends Agent {
 
         try {
             SearchConstraints c = new SearchConstraints();
-            c.setMaxResults ((long) -1);
-            agents = AMSService.search( this, new AMSAgentDescription (), c );
-        }
-        catch (Exception e) {
+            c.setMaxResults((long) -1);
+            agents = AMSService.search(this, new AMSAgentDescription(), c);
+        } catch (Exception e) {
 
         }
-        for (int i=0; i < agents.length; i++){
+        for (int i = 0; i < agents.length; i++) {
             AID agentID = agents[i].getName();
             String localName = agentID.getLocalName();
-            if(localName.startsWith("localizator")) {
+            if (localName.startsWith("localizator")) {
                 agentsId.add(agentID);
             }
         }
@@ -52,3 +54,5 @@ public class AdvertaismentSpaceAgent extends Agent {
         return list.get(r.nextInt((list.size())));
     }
 }
+
+

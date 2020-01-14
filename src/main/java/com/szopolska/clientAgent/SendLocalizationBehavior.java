@@ -1,16 +1,16 @@
-package com.szopolska.ClientAgents;
+package com.szopolska.clientAgent;
 
 import jade.core.AID;
 import jade.core.Agent;
-import jade.core.behaviours.Behaviour;
-import jade.core.behaviours.CyclicBehaviour;
 import jade.core.behaviours.TickerBehaviour;
 import jade.lang.acl.ACLMessage;
 
+import java.util.Collections;
 import java.util.Vector;
 
 public class SendLocalizationBehavior extends TickerBehaviour {
     AID localizator;
+
     public SendLocalizationBehavior(Agent a, long period) {
         super(a, period);
 

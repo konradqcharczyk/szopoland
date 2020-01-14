@@ -1,6 +1,5 @@
-package com.szopolska.ClientAgents;
+package com.szopolska.clientAgent;
 
-import com.szopolska.ShoppingMall.DataAggregator;
 import jade.core.AID;
 
 import java.util.HashMap;
@@ -9,7 +8,7 @@ public class ClientLocalizatorAggregator {
     private static ClientLocalizatorAggregator instance = null;
 
     public static ClientLocalizatorAggregator getInstance() {
-        if(instance == null) {
+        if (instance == null) {
             instance = new ClientLocalizatorAggregator();
         }
         return instance;

@@ -1,28 +1,27 @@
-package com.szopolska.LocalizatorAgents;
+package com.szopolska.localizatorAgent;
 
 import jade.core.AID;
 import jade.core.Agent;
 import jade.core.behaviours.TickerBehaviour;
 import jade.lang.acl.ACLMessage;
-import jade.lang.acl.UnreadableException;
 
 import java.io.IOException;
-import java.util.HashMap;
 
-public class AdSpaceSendReqBehaviour extends TickerBehaviour{
+public class ClientDataProviderBehaviuor extends TickerBehaviour {
 
-    public AdSpaceSendReqBehaviour(Agent a, long period) {
+
+    public ClientDataProviderBehaviuor(Agent a, long period) {
         super(a, period);
     }
 
     @Override
     protected void onTick() {
-        ACLMessage msg = new ACLMessage(ACLMessage.REQUEST);
+        ACLMessage msg = new ACLMessage(ACLMessage.INFORM);
         msg.addReceiver(new AID("mall", AID.ISLOCALNAME));
         msg.setLanguage("English");
-        msg.setOntology("req-ad-ontology");
+        msg.setOntology("send-data-ontology");
         try {
-            msg.setContentObject(myAgent.getAID());
+            msg.setContentObject(LocalizatorAggregator.getInstance().getLocalizatorData(myAgent.getAID()));
         } catch (IOException e) {
             e.printStackTrace();
         }

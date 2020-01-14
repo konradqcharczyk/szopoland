@@ -1,6 +1,5 @@
-package com.szopolska.ShopAgent;
+package com.szopolska.shopAgent;
 
-import com.szopolska.ClientAgents.ClientLocalizatorAggregator;
 import jade.core.AID;
 import jade.core.Agent;
 import jade.core.behaviours.TickerBehaviour;

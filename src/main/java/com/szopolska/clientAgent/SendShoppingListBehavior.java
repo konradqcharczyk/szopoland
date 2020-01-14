@@ -1,4 +1,4 @@
-package com.szopolska.ClientAgents;
+package com.szopolska.clientAgent;
 
 import jade.core.AID;
 import jade.core.behaviours.Behaviour;

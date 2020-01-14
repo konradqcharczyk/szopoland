@@ -1,34 +1,30 @@
-package com.szopolska.LocalizatorAgents;
+package com.szopolska.advertismentSpace;
 
-import jade.core.AID;
 import jade.core.behaviours.CyclicBehaviour;
 import jade.lang.acl.ACLMessage;
 import jade.lang.acl.UnreadableException;
-
-import java.util.HashMap;
-import java.util.Vector;
 
 public class AdSpaceReviceAdBehavior extends CyclicBehaviour {
 
     public AdSpaceReviceAdBehavior() {
         super();
     }
+
     @Override
     public void action() {
         ACLMessage msg = myAgent.receive();
-        if(msg != null ) {
+        if (msg != null) {
             try {
-                showAd(msg.getObjectContent().toString());
+                showAd(msg.getContentObject().toString());
             } catch (UnreadableException e) {
                 e.printStackTrace();
             }
-        }
-        else {
+        } else {
             block();
         }
     }
 
     private void showAd(String ad) {
-        System.out.println("On AdvertismentSpace " + myAgent.getLocalname() + " ad: " + ad);
+        System.out.println("On advertismentSpace " + myAgent.getLocalName() + " ad: " + ad);
     }
 }

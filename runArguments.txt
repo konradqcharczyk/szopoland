@@ -1,0 +1,8 @@
+-gui
+"
+localizator01:com.szopolska.localizatorAgent.LocalizatorAgent;
+localizator02:com.szopolska.localizatorAgent.LocalizatorAgent;
+mall:com.szopolska.shoppingMall.ShoppingMallAgent;
+client01:com.szopolska.clientAgent.ClientAgent;
+client02:com.szopolska.clientAgent.ClientAgent;
+"

@@ -12,8 +12,6 @@ public class SendShoppingListBehavior extends Behaviour {
     public void action() {
         ACLMessage msg = new ACLMessage(ACLMessage.INFORM);
         msg.addReceiver(new AID("localizator01", AID.ISLOCALNAME));
-        msg.setLanguage("English");
-        msg.setOntology("shopping-list-ontology");
         msg.setContent(CreateShoppingList() + "");
         myAgent.send(msg);
     }

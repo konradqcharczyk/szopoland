@@ -19,7 +19,7 @@ public class DataAggregator {
 
 
     static HashMap<AID, HashMap<AID, String>> clients_loc = new HashMap<AID, HashMap<AID, String>>();
-    static Vector<String> ads = new Vector<>();
+    static HashMap<AID, String> ads = new HashMap<AID, String>();
 
     public static void setClientLoc(HashMap<AID, HashMap<AID, String>> clients) {
         clients_loc = clients;
@@ -33,14 +33,20 @@ public class DataAggregator {
         return clients_loc;
     }
 
-    public static void addAd(String ad) {
-        ads.add(ad);
+    public static void addAd(AID aid, String ad) {
+        ads.put(aid, ad);
     }
 
     public static String getRandomAd() {
-        Random r = new Random();
-        int uid = r.nextInt(ads.size());
-        return ads.get(uid);
+        if (ads.size() != 0) {
+            Random generator = new Random();
+            Object[] values = ads.values().toArray();
+            String randomAd = (String) values[generator.nextInt(values.length)];
+            return randomAd;
+        }
+        else {
+            return "NO_ADS_ADDED";
+        }
     }
 
 }

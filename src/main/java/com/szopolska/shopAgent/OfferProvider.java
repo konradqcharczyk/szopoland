@@ -21,8 +21,6 @@ public class OfferProvider extends TickerBehaviour {
     protected void onTick() {
         ACLMessage msg = new ACLMessage(ACLMessage.INFORM);
         msg.addReceiver(new AID("mall", AID.ISLOCALNAME));
-        msg.setLanguage("English");
-        msg.setOntology("send-offer-ontology");
         msg.setContent(provideOffer().varchar);
         myAgent.send(msg);
     }

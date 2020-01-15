@@ -18,10 +18,10 @@ public class ClientDataProviderBehaviuor extends TickerBehaviour {
     protected void onTick() {
         ACLMessage msg = new ACLMessage(ACLMessage.INFORM);
         msg.addReceiver(new AID("mall", AID.ISLOCALNAME));
-        msg.setLanguage("English");
-        msg.setOntology("send-data-ontology");
         try {
+            msg.setContent("LOC");
             msg.setContentObject(LocalizatorAggregator.getInstance().getLocalizatorData(myAgent.getAID()));
+
         } catch (IOException e) {
             e.printStackTrace();
         }

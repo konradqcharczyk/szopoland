@@ -22,15 +22,11 @@ public class SendLocalizationBehavior extends TickerBehaviour {
         ACLMessage msg_to_remove = new ACLMessage(ACLMessage.INFORM);
         if (this.localizator != null && ClientLocalizatorAggregator.getInstance().getClientLocalizator(myAgent.getAID()) != this.localizator) {
             msg_to_remove.addReceiver(this.localizator);
-            msg_to_remove.setLanguage("English");
-            msg_to_remove.setOntology("send-data-ontology");
             msg_to_remove.setContent("LOST_CONNECTION");
             myAgent.send(msg_to_remove);
         }
         this.localizator = ClientLocalizatorAggregator.getInstance().getClientLocalizator(myAgent.getAID());
         msg.addReceiver(this.localizator);
-        msg.setLanguage("English");
-        msg.setOntology("send-data-ontology");
         msg.setContent(GetLocalization() + "#" + CreateShoppingList());
         myAgent.send(msg);
     }

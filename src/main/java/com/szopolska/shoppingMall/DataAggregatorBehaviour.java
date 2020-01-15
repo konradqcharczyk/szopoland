@@ -21,18 +21,22 @@ public class DataAggregatorBehaviour extends CyclicBehaviour {
             switch (msg.getSender().getName().substring(0,3)) {
                 case "loc":
                     try {
-                        System.out.println("Client localization from " + msg.getSender().getLocalName() + " " + msg.getContentObject());
+                        System.out.print("Client data from " + msg.getSender().getLocalName() + ": ");
+                        for (AID key : ((HashMap<AID, String>) msg.getContentObject()).keySet()) {
+                            System.out.print(key.getLocalName() + " with data: " + ((HashMap<AID, String>) msg.getContentObject()).get(key) + ", ");
+                        }
+                        System.out.println();
                         DataAggregator.getInstance().addClientLoc(msg.getSender(), (HashMap<AID, String>) msg.getContentObject());
                     } catch (UnreadableException e) {
                         e.printStackTrace();
                     }
                     break;
                 case "sho":
-                    System.out.println("Shop offer req from " + msg.getSender().getLocalName() + " " + msg.getContent());
+                    System.out.println("Shop offer from " + msg.getSender().getLocalName() + ": " + msg.getContent());
                     DataAggregator.getInstance().addAd(msg.getSender(),msg.getContent());
                     break;
                 case "adS":
-                    System.out.println("AdSpace req from " + msg.getSender().getLocalName());
+                    System.out.println("AdSpace request from " + msg.getSender().getLocalName());
 
                     ACLMessage msgResp = new ACLMessage(ACLMessage.INFORM);
                     msgResp.addReceiver(msg.getSender());

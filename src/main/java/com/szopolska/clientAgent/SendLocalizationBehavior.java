@@ -9,11 +9,12 @@ import java.util.Collections;
 import java.util.Vector;
 
 public class SendLocalizationBehavior extends TickerBehaviour {
-    AID localizator;
+    private AID localizator;
+    private Vector<String> shoppingList;
 
     public SendLocalizationBehavior(Agent a, long period) {
         super(a, period);
-
+        shoppingList = CreateShoppingList();
     }
 
     @Override
@@ -27,7 +28,7 @@ public class SendLocalizationBehavior extends TickerBehaviour {
         }
         this.localizator = ClientLocalizatorAggregator.getInstance().getClientLocalizator(myAgent.getAID());
         msg.addReceiver(this.localizator);
-        msg.setContent(GetLocalization() + "#" + CreateShoppingList());
+        msg.setContent(GetLocalization() + "#" + shoppingList);
         myAgent.send(msg);
     }
 

@@ -9,6 +9,8 @@ import jade.lang.acl.ACLMessage;
 import jade.lang.acl.UnreadableException;
 
 import java.io.IOException;
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Vector;
@@ -36,7 +38,17 @@ public class PathSenderBahaviour extends TickerBehaviour {
 
     //TODO add this
     private Path getPath(AID aid) {
-        return new Path(aid);
+        Path path = new Path(aid);
+        Vector<String> shoppingList = DataAggregator.getInstance().getClientShoppingList(aid);
+        HashMap<AID, Vector<String>> shopsStocks = DataAggregator.getInstance().getAllShopStock();
+        for(String item : shoppingList) {
+            for (Map.Entry<AID, Vector<String>> shop_stock : shopsStocks.entrySet()) {
+                if(shop_stock.getValue().contains(item.strip())) {
+                    path.addShop(shop_stock.getKey().getLocalName());
+                }
+            }
+        }
+        return path;
     }
 
 

@@ -19,13 +19,13 @@ public class DataAggregatorBehaviour extends CyclicBehaviour {
         ACLMessage msg = myAgent.receive();
         if (msg != null) {
             if (msg.getContent().substring(0,3).equals("LOC")) {
-                System.out.println(msg.getSender().getLocalName() + " localization " +  ": " + msg.getContent());
+                System.out.println(msg.getSender().getLocalName() + " localization " +  ": " + msg.getContent().substring(4));
                 switch (msg.getSender().getName().substring(0,3)) {
                     case "loc":
-                        DataAggregator.getInstance().addLocLocalization(msg.getSender(), msg.getContent().substring(0,4));
+                        DataAggregator.getInstance().addLocLocalization(msg.getSender(), msg.getContent().substring(4));
                         break;
                     case "sho":
-                        DataAggregator.getInstance().addShopLocalization(msg.getSender(), msg.getContent().substring(0,4));
+                        DataAggregator.getInstance().addShopLocalization(msg.getSender(), msg.getContent().substring(4));
                         break;
                 }
             }
@@ -44,12 +44,18 @@ public class DataAggregatorBehaviour extends CyclicBehaviour {
                         }
                         break;
                     case "sho":
-                        System.out.println("Shop offer from " + msg.getSender().getLocalName() + ": " + msg.getContent());
-                        DataAggregator.getInstance().addAd(msg.getSender(), msg.getContent());
+                        if (msg.getContent().substring(0,3).equals("OFF")) {
+                            System.out.println("Shop offer from " + msg.getSender().getLocalName() + ": " + msg.getContent().substring(4));
+                            DataAggregator.getInstance().addAd(msg.getSender(), msg.getContent().substring(4));
+                        }
+                        else if (msg.getContent().substring(0,3).equals("STK")) {
+                            System.out.println("Shop " + msg.getSender().getLocalName() + " offers: " + msg.getContent().substring(4));
+                            DataAggregator.getInstance().setShopStock(msg.getSender(), msg.getContent().substring((4)));
+                        }
+
                         break;
                     case "adS":
                         System.out.println("AdSpace request from " + msg.getSender().getLocalName());
-
                         ACLMessage msgResp = new ACLMessage(ACLMessage.INFORM);
                         msgResp.addReceiver(msg.getSender());
                         msgResp.setContent(DataAggregator.getInstance().getRandomAd());

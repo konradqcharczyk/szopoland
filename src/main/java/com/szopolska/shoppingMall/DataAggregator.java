@@ -2,10 +2,8 @@ package com.szopolska.shoppingMall;
 
 import jade.core.AID;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Random;
-import java.util.Vector;
+import java.lang.reflect.Array;
+import java.util.*;
 
 public class DataAggregator {
 
@@ -20,6 +18,7 @@ public class DataAggregator {
 
     static HashMap<AID, String> locLocation = new HashMap<AID, String>();
     static HashMap<AID, String> shopLocation = new HashMap<AID, String>();
+    static HashMap<AID, Vector<String>> shopStock = new HashMap<AID, Vector<String>>();
 
     static HashMap<AID, HashMap<AID, String>> clients_loc = new HashMap<AID, HashMap<AID, String>>();
     static HashMap<AID, String> ads = new HashMap<AID, String>();
@@ -44,6 +43,24 @@ public class DataAggregator {
     public static String getLocLocalization(AID aid) {
         return locLocation.get(aid);
     }
+
+    public static void setShopStock(AID aid, String stock) {
+        Vector <String> vector = new Vector<>(Arrays.asList(stock.replace('[', ' ').replace(']', ' ').split(",")));
+        Vector <String> toPut = new Vector<String>();
+        for(String item: vector) {
+            toPut.add(item.strip());
+        }
+        shopStock.put(aid, toPut);
+    }
+
+    public static Vector<String> getShopStock(AID aid) {
+        return shopStock.get(aid);
+    }
+
+    public static HashMap<AID, Vector<String>>getAllShopStock() {
+        return shopStock;
+    }
+
 
     public static void addShopLocalization(AID aid, String loc) {
         shopLocation.put(aid, loc);
@@ -77,6 +94,17 @@ public class DataAggregator {
             }
         }
         return toReturn;
+    }
+
+    public static Vector<String> getClientShoppingList(AID aid) {
+        for (Map.Entry<AID, HashMap<AID, String>> entry : clients_loc.entrySet()) {
+            for (Map.Entry<AID, String> loc_user : entry.getValue().entrySet()) {
+                if(loc_user.getKey() == aid) {
+                    return new Vector (Arrays.asList(loc_user.getValue().split("#")[1].replace('[', ' ').replace(']', ' ').split(",")));
+                }
+            }
+        }
+        return null;
     }
 
 }

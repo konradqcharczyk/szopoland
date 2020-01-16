@@ -14,7 +14,7 @@ public class SendLocalizationBehavior extends TickerBehaviour {
 
     public SendLocalizationBehavior(Agent a, long period) {
         super(a, period);
-        shoppingList = CreateShoppingList();
+        shoppingList = createShoppingList();
     }
 
     @Override
@@ -28,11 +28,11 @@ public class SendLocalizationBehavior extends TickerBehaviour {
         }
         this.localizator = ClientLocalizatorAggregator.getInstance().getClientLocalizator(myAgent.getAID());
         msg.addReceiver(this.localizator);
-        msg.setContent(GetLocalization() + "#" + shoppingList);
+        msg.setContent(getLocalization() + "#" + shoppingList);
         myAgent.send(msg);
     }
 
-    private Vector<Double> GetLocalization() {
+    private Vector<Double> getLocalization() {
         Vector<Double> loc = new Vector<Double>();
         loc.add(Math.random() * 100);
         loc.add(Math.random() * 100);
@@ -40,7 +40,7 @@ public class SendLocalizationBehavior extends TickerBehaviour {
     }
 
 
-    private Vector<String> CreateShoppingList() {
+    private Vector<String> createShoppingList() {
         Vector<String> allItems = new Vector<String>();
         Vector<String> selectedItems = new Vector<String>();
         allItems.add("BUTY");
@@ -48,8 +48,8 @@ public class SendLocalizationBehavior extends TickerBehaviour {
         allItems.add("T-SHIRT");
         allItems.add("SPODNIE");
         allItems.add("SKARPETY");
-        Collections.shuffle(allItems);
-        selectedItems.add(allItems.get(0));
+//        Collections.shuffle(allItems);
+        selectedItems.add(allItems.get(2));
         selectedItems.add(allItems.get(1));
         return selectedItems;
     }

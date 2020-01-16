@@ -21,7 +21,7 @@ public class OfferProvider extends TickerBehaviour {
     protected void onTick() {
         ACLMessage msg = new ACLMessage(ACLMessage.INFORM);
         msg.addReceiver(new AID("mall", AID.ISLOCALNAME));
-        msg.setContent(provideOffer().varchar);
+        msg.setContent("OFF: " + provideOffer().varchar);
         myAgent.send(msg);
     }
 

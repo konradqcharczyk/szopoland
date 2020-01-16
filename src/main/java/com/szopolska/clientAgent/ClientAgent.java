@@ -18,7 +18,7 @@ public class ClientAgent extends Agent {
         ClientLocalizatorAggregator.getInstance().setClientLocalizator(this.getAID(), getRandomLocalizator());
         addBehaviour(new ChangeLocalizatorBehaviour(this, 10000));
         addBehaviour(new SendLocalizationBehavior(this, 2000));
-
+        addBehaviour(new ClientPathAggregator());
     }
 
     protected void takeDown() {

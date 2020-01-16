@@ -48,7 +48,6 @@ public class ChangeLocalizatorBehaviour extends TickerBehaviour {
                 agentsId.add(agentID);
             }
         }
-        System.out.println(agentsId);
         return agentsId;
     }
 }

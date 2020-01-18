@@ -13,7 +13,7 @@ public class Path implements Serializable {
         this.shops = new Vector<>();
     }
     public String toString() {
-        return "It's path for " + clientAid.getLocalName() + ": " + shops;
+        return "Path for " + clientAid.getLocalName() + ": " + shops;
     }
     public void addShop(String shopName) {
         if(!shops.contains(shopName)) {

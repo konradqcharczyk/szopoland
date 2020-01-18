@@ -48,8 +48,8 @@ public class SendLocalizationBehavior extends TickerBehaviour {
         allItems.add("T-SHIRT");
         allItems.add("SPODNIE");
         allItems.add("SKARPETY");
-//        Collections.shuffle(allItems);
-        selectedItems.add(allItems.get(2));
+        Collections.shuffle(allItems);
+        selectedItems.add(allItems.get(0));
         selectedItems.add(allItems.get(1));
         return selectedItems;
     }

@@ -16,7 +16,7 @@ public class ShopAgent extends Agent {
     protected void setup() {
         System.out.println("Hello! Shop-agent " + getAID().getName() + " is ready.");
         addBehaviour(new MessageReceiver());
-        addBehaviour(new OfferProvider(this, 50000));
+        addBehaviour(new OfferProvider(this, 10000));
 
         addBehaviour(new SimpleBehaviour(this) {
             @Override
@@ -67,10 +67,9 @@ public class ShopAgent extends Agent {
         allItems.add("T-SHIRT");
         allItems.add("SPODNIE");
         allItems.add("SKARPETY");
-//        Collections.shuffle(allItems);
+        Collections.shuffle(allItems);
         selectedItems.add(allItems.get(0));
         selectedItems.add(allItems.get(1));
-        selectedItems.add(allItems.get(2));
         return selectedItems;
     }
 }

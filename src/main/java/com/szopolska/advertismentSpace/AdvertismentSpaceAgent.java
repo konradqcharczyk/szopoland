@@ -16,7 +16,7 @@ public class AdvertismentSpaceAgent extends Agent {
         System.out.println("Hello! AdvertaismentSpace-agent " + getAID().getName() + " is ready.");
         AdSpaceAggregator.getInstance().setAdSpaceLocalizator(this.getAID(), getRandomLocalizator());
         addBehaviour(new AdSpaceReviceAdBehavior());
-        addBehaviour(new AdSpaceSendReqBehaviour(this, 100000));
+        addBehaviour(new AdSpaceSendReqBehaviour(this, 10000));
     }
 
     protected void takeDown() {
